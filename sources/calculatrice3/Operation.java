@@ -76,7 +76,7 @@ public enum Operation {
 
     public static Operation getOperateur(String code_operation) {
     	for (Operation o : Operation.values()) {
-    		if (o.code_operation.equals(code_operation)) {
+    		if (o.toString().equals(code_operation)) {
     			return o;
     		}
     	}
@@ -110,8 +110,8 @@ public enum Operation {
                 case SWAP:
                     Double tmp1 = pile.pop();
                     Double tmp2 = pile.pop();
-                    pile.push(tmp2);
                     pile.push(tmp1);
+                    pile.push(tmp2);
                 break;
 
                 case COUNT:
@@ -124,7 +124,7 @@ public enum Operation {
                     while (!pileTmp.isEmpty()) {
                         pile.push(pileTmp.pop());
                     }
-                    pile.push((Double)(compteur.doubleValue()));
+                    pile.push((compteur.doubleValue()));
                 break;
             }
         }

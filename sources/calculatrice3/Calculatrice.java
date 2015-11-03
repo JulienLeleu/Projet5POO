@@ -22,13 +22,13 @@ public class Calculatrice {
 		while (st.hasMoreTokens()) {
 			String token = st.nextToken();
 			//Si c'est un symbole d'opération
-			if (operations.get(token) != null) {
-				if (Operation.getOperateur(token).getArite() > 0) {
-					Double [] tab = new Double[Operation.getOperateur(token).getArite()];
-					for (int i = 0; i < tab.length; i++) {
+			if (operations.containsKey(token)) {
+				//if (Operation.getOperateur(token).getArite() > 0) {
+					//Double [] tab = new Double[Operation.getOperateur(token).getArite()];
+					/*for (int i = 0; i < tab.length; i++) {
 						tab[i] = resultat.pop();
-					}
-				}
+					}*/
+				//}
 				Operation.getOperateur(token).execute(resultat);
 			}
 			else {
